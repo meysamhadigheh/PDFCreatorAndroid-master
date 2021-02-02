@@ -25,6 +25,11 @@
             android:name=".PdfCreatorActivity"
             android:configChanges="orientation|screenSize"
             android:theme="@style/AppTheme.TransparentStatusBar" />
+
+        <activity
+            android:name=".PdfCreatorTestActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme.TransparentStatusBar" />
         <activity
             android:name=".PdfViewerActivity"
             android:configChanges="orientation|screenSize"
