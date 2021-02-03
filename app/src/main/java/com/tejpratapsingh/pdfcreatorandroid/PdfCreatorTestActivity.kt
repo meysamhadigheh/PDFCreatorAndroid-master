@@ -82,7 +82,7 @@ class PdfCreatorTestActivity : PDFCreatorActivity() {
 
         val totalCustomerView = PDFTextView(applicationContext, PDFTextView.PDF_TEXT_SIZE.H2)
         totalCustomerView.setText("تعداد کل مشتریان: ۱۲۰ نفر")
-        totalCustomerView.setPadding(0, 20, 0, 0)
+        totalCustomerView.setPadding(0, 40, 0, 0)
         totalCustomerView.setLayout(LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT))
@@ -96,6 +96,27 @@ class PdfCreatorTestActivity : PDFCreatorActivity() {
                 50)
         tableHeaderViewLayoutParam.setMargins( 0, 10, 0, 0)
         tableHeaderView.setLayout(tableHeaderViewLayoutParam)
+
+
+        val tableFooterView=TableFooterView(applicationContext)
+
+
+        with(tableFooterView){
+
+            name="جمع کل"
+            createAt=""
+            paid="۲۷،۰۰۰،۰۰۰"
+            received="۱۴،۰۰۰،۰۰۰"
+            details=""
+
+        }
+
+        val tableFooterViewLayoutParam = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                50)
+        tableFooterViewLayoutParam.setMargins( 0, 20, 0, 0)
+        tableFooterView.setLayout(tableFooterViewLayoutParam)
+
 
 
 
@@ -121,6 +142,8 @@ class PdfCreatorTestActivity : PDFCreatorActivity() {
             pdfBody.addView(tableRowView)
 
         }
+
+        pdfBody.addView(tableFooterView)
 
 
         return pdfBody
