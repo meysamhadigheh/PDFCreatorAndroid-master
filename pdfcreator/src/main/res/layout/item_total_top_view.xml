@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:padding="4dp"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_rounded_corner_stroke"
+    >
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:text="بالانس جدید"
+            android:gravity="center"
+            android:textSize="8dp"/>
+        <TextView
+            android:id="@+id/totalPrice"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:text="2,340,000 t"
+            android:textStyle="bold"
+            android:textColor="@color/red_900"
+            android:gravity="center_horizontal|top"
+            android:layout_alignParentBottom="true"
+            android:textSize="8dp"/>
+
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:background="@color/colorDivider"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:text="مقدار پرداختی"
+            android:gravity="center"
+            android:textSize="8dp"/>
+        <TextView
+            android:id="@+id/paidPrice"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:text="2,340,000 t"
+            android:textStyle="bold"
+            android:gravity="center_horizontal|top"
+            android:layout_alignParentBottom="true"
+            android:textSize="8dp"/>
+
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:background="@color/colorDivider"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:text="مقدار دریافتی"
+            android:gravity="center"
+            android:textSize="8dp"/>
+        <TextView
+            android:id="@+id/receivedPrice"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:text="2,340,000 t"
+            android:textStyle="bold"
+            android:gravity="center_horizontal|top"
+            android:layout_alignParentBottom="true"
+            android:textSize="8dp"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

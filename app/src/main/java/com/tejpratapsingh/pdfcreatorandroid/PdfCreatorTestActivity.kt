@@ -12,6 +12,7 @@ import com.tejpratapsingh.pdfcreator.utils.PDFUtil.PDFUtilListener
 import com.tejpratapsingh.pdfcreator.views.HeaderView
 import com.tejpratapsingh.pdfcreator.views.PDFBody
 import com.tejpratapsingh.pdfcreator.views.PDFHeaderView
+import com.tejpratapsingh.pdfcreator.views.TotalTopView
 import com.tejpratapsingh.pdfcreator.views.basic.PDFTextView
 import java.io.File
 
@@ -46,25 +47,45 @@ class PdfCreatorTestActivity : PDFCreatorActivity() {
     override fun getBodyViews(): PDFBody {
         val pdfBody = PDFBody()
 
-        val title = PDFTextView(applicationContext, PDFTextView.PDF_TEXT_SIZE.HEADER)
-        title.setText("گزارش لیست مشتریان")
-        title.setLayout(LinearLayout.LayoutParams(
+        val titleView = PDFTextView(applicationContext, PDFTextView.PDF_TEXT_SIZE.HEADER)
+        titleView.setText("گزارش لیست مشتریان")
+        titleView.setLayout(LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT))
-        title.view.gravity = Gravity.CENTER_HORIZONTAL
-        title.view.setTypeface(title.view.typeface, Typeface.BOLD)
-        title.setPadding(0,30,0,0)
+        titleView.view.gravity = Gravity.CENTER_HORIZONTAL
+        titleView.view.setTypeface(titleView.view.typeface, Typeface.BOLD)
+        titleView.setPadding(0, 30, 0, 0)
 
-        pdfBody.addView(title)
+        pdfBody.addView(titleView)
 
-        val date = PDFTextView(applicationContext, PDFTextView.PDF_TEXT_SIZE.HEADER)
-        date.setText("( از امروز تا تاریخ ۱۳۹۹/۱۱/۱۵ )")
-        date.setPadding(0,10,0,0)
-        date.setLayout(LinearLayout.LayoutParams(
+        val dateView = PDFTextView(applicationContext, PDFTextView.PDF_TEXT_SIZE.HEADER)
+        dateView.setText("( از امروز تا تاریخ ۱۳۹۹/۱۱/۱۵ )")
+        dateView.setPadding(0, 10, 0, 0)
+        dateView.setLayout(LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT))
-        date.view.gravity = Gravity.CENTER_HORIZONTAL
-        pdfBody.addView(date)
+        dateView.view.gravity = Gravity.CENTER_HORIZONTAL
+        pdfBody.addView(dateView)
+
+        val totalView=TotalTopView(applicationContext)
+        val totalViewLayoutParam = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                120)
+        totalViewLayoutParam.setMargins( 0, 30, 0, 0)
+        totalView.setLayout(totalViewLayoutParam)
+
+        val totalCustomerView = PDFTextView(applicationContext, PDFTextView.PDF_TEXT_SIZE.H2)
+        totalCustomerView.setText("تعداد کل مشتریان: ۱۲۰ نفر")
+        totalCustomerView.setPadding(0, 40, 0, 0)
+        totalCustomerView.setLayout(LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT))
+        totalCustomerView.view.gravity = Gravity.START
+
+
+        pdfBody.addView(totalView)
+        pdfBody.addView(totalCustomerView)
+
 
         return pdfBody
     }
