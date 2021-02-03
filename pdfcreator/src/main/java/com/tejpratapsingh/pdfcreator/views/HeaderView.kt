@@ -42,7 +42,7 @@ class HeaderView//Avoid pass null in the root it ignores spaces in the child lay
         val inflater = LayoutInflater.from(context)
 
 //to get the MainLayout
-        view = inflater.inflate(R.layout.custom_header_view, null);
+        view = inflater.inflate(R.layout.item_header_view, null);
 
 
     }
