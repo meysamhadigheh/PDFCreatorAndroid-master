@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import com.tejpratapsingh.pdfcreator.R
 import com.tejpratapsingh.pdfcreator.views.basic.PDFView
-import kotlinx.android.synthetic.main.custom_header_view.view.*
+import kotlinx.android.synthetic.main.item_header_view.view.*
 import java.io.Serializable
 
 /**
