@@ -51,11 +51,11 @@ class PdfCreatorTestActivity : PDFCreatorActivity() {
                 LinearLayout.LayoutParams.WRAP_CONTENT))
         titleView.view.gravity = Gravity.CENTER_HORIZONTAL
         titleView.view.setTypeface(titleView.view.typeface, Typeface.BOLD)
-        titleView.setPadding(0, 30, 0, 0)
+        titleView.setPadding(0, 20, 0, 0)
 
         pdfBody.addView(titleView)
 
-        val dateView = PDFTextView(applicationContext, PDFTextView.PDF_TEXT_SIZE.HEADER)
+        val dateView = PDFTextView(applicationContext, PDFTextView.PDF_TEXT_SIZE.H1)
         dateView.setText("( از امروز تا تاریخ ۱۳۹۹/۱۱/۱۵ )")
         dateView.setPadding(0, 10, 0, 0)
         dateView.setLayout(LinearLayout.LayoutParams(
@@ -67,13 +67,13 @@ class PdfCreatorTestActivity : PDFCreatorActivity() {
         val totalView=TotalTopView(applicationContext)
         val totalViewLayoutParam = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
-                120)
-        totalViewLayoutParam.setMargins( 0, 30, 0, 0)
+                80)
+        totalViewLayoutParam.setMargins( 0, 20, 0, 0)
         totalView.setLayout(totalViewLayoutParam)
 
         val totalCustomerView = PDFTextView(applicationContext, PDFTextView.PDF_TEXT_SIZE.H2)
         totalCustomerView.setText("تعداد کل مشتریان: ۱۲۰ نفر")
-        totalCustomerView.setPadding(0, 40, 0, 0)
+        totalCustomerView.setPadding(0, 20, 0, 0)
         totalCustomerView.setLayout(LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT))
@@ -82,7 +82,7 @@ class PdfCreatorTestActivity : PDFCreatorActivity() {
         val tableHeaderView=TableHeaderView(applicationContext)
         val tableHeaderViewLayoutParam = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
-                60)
+                50)
         tableHeaderViewLayoutParam.setMargins( 0, 10, 0, 0)
         tableHeaderView.setLayout(tableHeaderViewLayoutParam)
 
@@ -92,6 +92,24 @@ class PdfCreatorTestActivity : PDFCreatorActivity() {
         pdfBody.addView(totalView)
         pdfBody.addView(totalCustomerView)
         pdfBody.addView(tableHeaderView)
+
+        for (i in 0..25){
+
+            val tableRowView=TableRowView(applicationContext)
+            tableRowView.name="میثم"
+            tableRowView.createAt="۱۳۹۹/۵/۲۰"
+            tableRowView.paid="۲۷،۰۰۰،۰۰۰"
+            tableRowView.received="۱۴،۰۰۰،۰۰۰"
+            tableRowView.details="+۹۸۹۱۷۱۳۹۲۷۵۶"
+            val tableRowViewLayoutParam = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    50)
+            tableRowViewLayoutParam.setMargins( 0, 0, 0, 0)
+            tableRowView.setLayout(tableRowViewLayoutParam)
+
+            pdfBody.addView(tableRowView)
+
+        }
 
 
         return pdfBody
