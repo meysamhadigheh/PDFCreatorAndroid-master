@@ -15,14 +15,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import androidx.core.content.ContextCompat;
-
 import com.tejpratapsingh.pdfcreator.activity.PDFCreatorActivity;
 import com.tejpratapsingh.pdfcreator.utils.PDFUtil;
 import com.tejpratapsingh.pdfcreator.views.PDFBody;
 import com.tejpratapsingh.pdfcreator.views.PDFHeaderView;
 import com.tejpratapsingh.pdfcreator.views.PDFTableView;
-import com.tejpratapsingh.pdfcreator.views.ReminderCardView;
 import com.tejpratapsingh.pdfcreator.views.basic.PDFHorizontalView;
 import com.tejpratapsingh.pdfcreator.views.basic.PDFImageView;
 import com.tejpratapsingh.pdfcreator.views.basic.PDFLineSeparatorView;
@@ -61,7 +58,6 @@ public class PdfCreatorActivity extends PDFCreatorActivity {
 
         PDFTextView pdfTextViewPage = new PDFTextView(getApplicationContext(), PDFTextView.PDF_TEXT_SIZE.SMALL);
         pdfTextViewPage.setText(String.format(Locale.getDefault(), "Page: %d", pageIndex + 1));
-        //pdfTextViewPage.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_left));
         pdfTextViewPage.setLayout(new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT, 0));
@@ -69,13 +65,6 @@ public class PdfCreatorActivity extends PDFCreatorActivity {
 
         headerView.addView(pdfTextViewPage);
 
-        ReminderCardView reminderCardView=new ReminderCardView(getApplicationContext());
-
-        reminderCardView.setTitle("nothing");
-        reminderCardView.setPhone("09171392756");
-        reminderCardView.setPrice("29,000,000");
-
-        //headerView.addView(reminderCardView);
 
         PDFHorizontalView horizontalView = new PDFHorizontalView(getApplicationContext());
 

@@ -1,16 +1,17 @@
 package com.tejpratapsingh.pdfcreatorandroid
 
 import android.content.Intent
+import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
+import android.view.Gravity
+import android.widget.LinearLayout
 import android.widget.Toast
 import com.tejpratapsingh.pdfcreator.activity.PDFCreatorActivity
 import com.tejpratapsingh.pdfcreator.utils.PDFUtil.PDFUtilListener
 import com.tejpratapsingh.pdfcreator.views.HeaderView
 import com.tejpratapsingh.pdfcreator.views.PDFBody
 import com.tejpratapsingh.pdfcreator.views.PDFHeaderView
-import com.tejpratapsingh.pdfcreator.views.PDFTableView
-import com.tejpratapsingh.pdfcreator.views.PDFTableView.PDFTableRowView
 import com.tejpratapsingh.pdfcreator.views.basic.PDFTextView
 import java.io.File
 
@@ -44,6 +45,26 @@ class PdfCreatorTestActivity : PDFCreatorActivity() {
 
     override fun getBodyViews(): PDFBody {
         val pdfBody = PDFBody()
+
+        val title = PDFTextView(applicationContext, PDFTextView.PDF_TEXT_SIZE.HEADER)
+        title.setText("گزارش لیست مشتریان")
+        title.setLayout(LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT))
+        title.view.gravity = Gravity.CENTER_HORIZONTAL
+        title.view.setTypeface(title.view.typeface, Typeface.BOLD)
+        title.setPadding(0,30,0,0)
+
+        pdfBody.addView(title)
+
+        val date = PDFTextView(applicationContext, PDFTextView.PDF_TEXT_SIZE.HEADER)
+        date.setText("( از امروز تا تاریخ ۱۳۹۹/۱۱/۱۵ )")
+        date.setPadding(0,10,0,0)
+        date.setLayout(LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT))
+        date.view.gravity = Gravity.CENTER_HORIZONTAL
+        pdfBody.addView(date)
 
         return pdfBody
     }
