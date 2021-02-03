@@ -18,7 +18,8 @@
             android:text="بالانس جدید"
             android:gravity="center"
             android:textSize="7dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:fontFamily="@font/dana"/>
         <TextView
             android:id="@+id/totalPrice"
             android:layout_width="match_parent"
@@ -28,7 +29,8 @@
             android:textStyle="bold"
             android:textColor="@color/red_900"
             android:gravity="center_horizontal|top"
-            android:textSize="7dp"/>
+            android:textSize="7dp"
+            android:fontFamily="@font/dana"/>
 
 
 
@@ -51,7 +53,8 @@
             android:text="مقدار پرداختی"
             android:gravity="center"
             android:textSize="7dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:fontFamily="@font/dana"/>
         <TextView
             android:id="@+id/paidPrice"
             android:layout_width="match_parent"
@@ -60,7 +63,8 @@
             android:textStyle="bold"
             android:gravity="center_horizontal|top"
             android:layout_weight="1"
-            android:textSize="7dp"/>
+            android:textSize="7dp"
+            android:fontFamily="@font/dana"/>
 
 
 
@@ -84,7 +88,8 @@
             android:text="مقدار دریافتی"
             android:gravity="center"
             android:textSize="7dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:fontFamily="@font/dana"/>
         <TextView
             android:id="@+id/receivedPrice"
             android:layout_width="match_parent"
@@ -93,7 +98,8 @@
             android:textStyle="bold"
             android:gravity="center_horizontal|top"
             android:textSize="7dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:fontFamily="@font/dana"/>
 
     </LinearLayout>
 

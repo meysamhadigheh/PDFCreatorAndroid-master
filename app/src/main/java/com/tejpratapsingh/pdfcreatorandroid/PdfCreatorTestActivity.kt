@@ -14,11 +14,19 @@ import com.tejpratapsingh.pdfcreator.views.basic.PDFTextView
 import java.io.File
 
 class PdfCreatorTestActivity : PDFCreatorActivity() {
+
+
+    var fontLightEn: Typeface?=null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (supportActionBar != null) {
             supportActionBar!!.hide()
         }
+
+        fontLightEn = Typeface.createFromAsset(assets,
+                "fonts/dana.ttf")
+
         createPDF("test", object : PDFUtilListener {
             override fun pdfGenerationSuccess(savedPDFFile: File) {
                 Toast.makeText(this@PdfCreatorTestActivity, "PDF Created", Toast.LENGTH_SHORT).show()
@@ -50,7 +58,7 @@ class PdfCreatorTestActivity : PDFCreatorActivity() {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT))
         titleView.view.gravity = Gravity.CENTER_HORIZONTAL
-        titleView.view.setTypeface(titleView.view.typeface, Typeface.BOLD)
+        titleView.view.setTypeface(fontLightEn, Typeface.BOLD)
         titleView.setPadding(0, 20, 0, 0)
 
         pdfBody.addView(titleView)
@@ -62,6 +70,7 @@ class PdfCreatorTestActivity : PDFCreatorActivity() {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT))
         dateView.view.gravity = Gravity.CENTER_HORIZONTAL
+        dateView.view.setTypeface(fontLightEn, Typeface.NORMAL)
         pdfBody.addView(dateView)
 
         val totalView=TotalTopView(applicationContext)
@@ -78,6 +87,8 @@ class PdfCreatorTestActivity : PDFCreatorActivity() {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT))
         totalCustomerView.view.gravity = Gravity.START
+        totalCustomerView.view.setTypeface(fontLightEn, Typeface.NORMAL)
+
 
         val tableHeaderView=TableHeaderView(applicationContext)
         val tableHeaderViewLayoutParam = LinearLayout.LayoutParams(
