@@ -9,10 +9,7 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import com.tejpratapsingh.pdfcreator.activity.PDFCreatorActivity
 import com.tejpratapsingh.pdfcreator.utils.PDFUtil.PDFUtilListener
-import com.tejpratapsingh.pdfcreator.views.HeaderView
-import com.tejpratapsingh.pdfcreator.views.PDFBody
-import com.tejpratapsingh.pdfcreator.views.PDFHeaderView
-import com.tejpratapsingh.pdfcreator.views.TotalTopView
+import com.tejpratapsingh.pdfcreator.views.*
 import com.tejpratapsingh.pdfcreator.views.basic.PDFTextView
 import java.io.File
 
@@ -82,9 +79,19 @@ class PdfCreatorTestActivity : PDFCreatorActivity() {
                 LinearLayout.LayoutParams.WRAP_CONTENT))
         totalCustomerView.view.gravity = Gravity.START
 
+        val tableHeaderView=TableHeaderView(applicationContext)
+        val tableHeaderViewLayoutParam = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                60)
+        tableHeaderViewLayoutParam.setMargins( 0, 10, 0, 0)
+        tableHeaderView.setLayout(tableHeaderViewLayoutParam)
+
+
+
 
         pdfBody.addView(totalView)
         pdfBody.addView(totalCustomerView)
+        pdfBody.addView(tableHeaderView)
 
 
         return pdfBody
